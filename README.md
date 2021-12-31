@@ -1,0 +1,1 @@
+This are odoo modules which include a hospitial management system,laptop management for logging laptops in a comapany and also a Production Application for managing shipping products intregrating with sales and invoice app  
