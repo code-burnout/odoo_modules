@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--this is a report action-->
+        <record id="english_sales_reports" model="ir.actions.report">
+            <field name="name">Quotation / Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="report_file">hos_production_app.english_reports</field>
+            <field name="report_name">hos_production_app.english_reports</field>
+            <field name="binding_model_id" ref="model_sale_order"/>
+        </record>
+
+        <!--this is a report action-->
+        <record id="norwegian_sales_reports" model="ir.actions.report">
+            <field name="name">Tilbud/bestilling</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="report_file">hos_production_app.norwegian_reports</field>
+            <field name="report_name">hos_production_app.norwegian_reports</field>
+            <field name="binding_model_id" ref="model_sale_order"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- this is the main view for laptop sys tracking-->
+<record id="laptopsys_action" model="ir.actions.act_window">
+    <field name="name">laptop Tracking SyS</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">laptopsys.model</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="context"></field>
+    <field name="help" type="html">
+    	<p class="o_view_nocontent_smiling_face">
+    	Log a laptop for Better Tacking!
+    	</p>
+    </field>
+</record>
+
+    <record id="laptopsys_tree" model="ir.ui.view">
+        <field name="name">main.laptopsys.tree</field>
+        <field name="model">laptopsys.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="modelName"/>
+                <field name="processor"/>
+                <field name="serialNum"/>
+                <field name="currentOnwer"/>
+                <field name="ownership"/>
+                <field name="osInstalled"/>
+                <field name="priceBought"/>
+            </tree>
+        </field>
+   </record>
+
+
+    <!--this id for displayiing and monitoring the buttons -->
+  <record id="laptop_sys_form" model="ir.ui.view">
+        <field name="name">laptop.sys.form</field>
+        <field name="model">laptopsys.model</field>
+        <field name="arch" type="xml">
+            <form>
+            	<sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(laptop_track_sys.laptopsys_action)d" class="oe_stat_button" type="action" icon="fa-wrench">
+                            <div class="o_stat_info">
+                                <field name="repairs_count"/>
+                                <span class="o_stat_text">Number of Repairs</span>
+                            </div>
+                        </button>
+                        <button name="%(laptop_track_sys.laptopsys_action)d" class="oe_stat_button" type="action" icon="fa-usd">
+                            <div class="o_stat_info">
+                                <field name="totalMaintaince"/>
+                                <span class="o_stat_text">Total Maintenance Costs</span>
+                            </div>
+                        </button>
+                    </div>
+                     <field name="laptopImage" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="modelName"/>
+                        </h1>
+                    </div>
+            		<group>
+            			<!--this splts form into 2 -->
+            			<group>
+			                <field name="currentOnwer"/>
+                            <field name="ownership"/>
+			                <field name="processor"/>
+			                <field name="ramSize"/>
+                            <field name="osInstalled"/>
+            			</group>
+            			<group>
+                            <field name="state"/>
+                           <field name="priceBought"/>
+
+            			</group>
+            		</group>
+                    <notebook>
+                        <page string="Current Owner Details">
+                            <field name="ownership_ids" readonly="0">
+                                <tree editable="top">
+                                    <field name="ownerName"/>
+                                    <field name="phoneNo"/>
+                                    <field name="issuedDate"/>
+                                    <field name="department"/>
+                                    <field name="address"/>
+                                </tree>
+                                    </field>
+                        </page>
+                        <page string="log Ownership">
+                            <field name="log_owner_ids" readonly="0">
+                                <tree editable="top">
+                                    <field name="Name"/>
+                                    <field name="phoneNum"/>
+                                    <field name="dateRec"/>
+                                    <field name="dateEnd"/>
+                                    <field name="departmen"/>
+                                    <field name="address"/>
+                                    <field name="reason"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Maintainance">
+                            <field name="laptop_maintain_ids" readonly="0">
+                                <tree editable="top">
+                                    <field name="Problem"/>
+                                    <field name="dateDis"/>
+                                    <field name="datefix"/>
+                                    <field name="cost"/>
+                                    <field name="where"/>
+                                </tree>
+                            </field>
+                        </page>
+                       </notebook>
+            	</sheet>
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+         </field>
+   </record>
+
+<!--for menu and joining actions-->
+<menuitem id="laptopsys_root"
+		name="BakerTilly laptop Tracking System"
+		sequence="10"/>
+
+<menuitem id="laptopsys_options_root"
+		name="All Laptops"
+		parent="laptopsys_root"
+		sequence="10"/>
+
+<menuitem id="laptop_log"
+		name="All Laptops"
+		parent="laptopsys_options_root"
+		action="laptopsys_action"
+		sequence="10"/>
+</odoo>

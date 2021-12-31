@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:BatchCollection xmlns:ns0="http://www.dnbnorfinans.no/Factoring/2004" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DefinedBy="DnB NOR Finans" Version="3.0" xsi:schemaLocation="http://www.dnbnorfinans.no/Factoring/2004 FACTINV-3-0.XSD">
+    <ns0:TransferDateTime>2021-06-17T15:14:05</ns0:TransferDateTime>
+    <ns0:Batch>
+        <ns0:ClientId>09891</ns0:ClientId>
+        <ns0:ClientName>VAD AS</ns0:ClientName>
+        <ns0:BatchDate>2021-06-17</ns0:BatchDate>
+        <ns0:BatchNbr>11</ns0:BatchNbr>
+    <ns0:Invoice>
+            <ns0:InvType>Invoice</ns0:InvType>
+            <ns0:InvCcy>NOK</ns0:InvCcy>
+            <ns0:Debtor>
+                <ns0:DebtorName>Ask AS</ns0:DebtorName>
+                <ns0:ClientDebtorNbr>7</ns0:ClientDebtorNbr>
+                <ns0:DebtorVATNbr>MVA-Agder-4839</ns0:DebtorVATNbr>
+                <ns0:DebtorPostalAddr>Ask AS
+Askeveien 13
+4839 Arendal
+Norway</ns0:DebtorPostalAddr>
+                <ns0:DebtorSuplAddr>Ask AS
+Askeveien 13
+4839 Arendal
+Norway</ns0:DebtorSuplAddr>
+                <ns0:DebtorPostalCode>4839</ns0:DebtorPostalCode>
+                <ns0:DebtorCity>Arendal</ns0:DebtorCity>
+                <ns0:DebtorCtryCode>NO</ns0:DebtorCtryCode>
+                <ns0:DebtorPhone>+47 83627883</ns0:DebtorPhone>
+                <ns0:DebtorMobile>+47 83627883</ns0:DebtorMobile>
+                <ns0:DebtorEmail>ask-as@example.com</ns0:DebtorEmail>
+                <ns0:DebtorRef>Ask AS</ns0:DebtorRef>
+            </ns0:Debtor>
+            <ns0:DeliveryDetails>
+                <ns0:DeliveryName />
+                <ns0:DeliveryAddr>Askeveien 13, 4839 Arendal, Agder, Norge</ns0:DeliveryAddr>
+                <ns0:DeliveryPostalCode>4839</ns0:DeliveryPostalCode>
+                <ns0:DeliveryCity>Arendal</ns0:DeliveryCity>
+                <ns0:DeliveryCtryCode>NO</ns0:DeliveryCtryCode>
+                <ns0:DeliveryDate />
+                <ns0:DeliveryType>Quotation</ns0:DeliveryType>
+                <ns0:DeliveryTerms>Quotation</ns0:DeliveryTerms>
+            </ns0:DeliveryDetails>
+            <ns0:InvoiceHeader>
+                <ns0:InvRef />
+                <ns0:InvNbr>25</ns0:InvNbr>
+                <ns0:InvDate>2021-05-24</ns0:InvDate>
+                <ns0:DueDate>2021-05-24</ns0:DueDate>
+                <ns0:PmtMethod />
+                <ns0:PmtTerms>
+                    <ns0:PmtTermsText>Immediate Payment</ns0:PmtTermsText>
+                </ns0:PmtTerms>
+                <ns0:OrderRef />
+                <ns0:Kid>7</ns0:Kid>
+            </ns0:InvoiceHeader>
+            <ns0:Items>
+                <ns0:OrderDetails>
+                    <ns0:Item>
+                        <ns0:ItemId>79</ns0:ItemId>
+                        <ns0:ItemDescr>INV/2021/05/0002 INV/2021/05/0002</ns0:ItemDescr>
+                        <ns0:NbrOfUnits>1.0</ns0:NbrOfUnits>
+                        <ns0:UnitPrice>-32.5</ns0:UnitPrice>
+                        <ns0:DiscPercent>0.0</ns0:DiscPercent>
+                        <ns0:Amt>-32.5</ns0:Amt>
+                        <ns0:VATPct>[]</ns0:VATPct>
+                    </ns0:Item>
+                </ns0:OrderDetails>
+            </ns0:Items>
+            <ns0:Total>
+                <ns0:NetAmt>26.0</ns0:NetAmt>
+                <ns0:VATAmt>6.5</ns0:VATAmt>
+                <ns0:TotalAmt>32.5</ns0:TotalAmt>
+            </ns0:Total>
+            <ns0:AssignClause>Fordringer etter nï¿½rvï¿½rende faktura er overdratt DnB NOR Bank ASA, Postboks 6579, Etterstad, 0607 Oslo, til eiendom. Befriende betaling kan kun skje til DnB NOR Finans, bankkonto 7032 05 16038. Ved betaling vennligst oppgi KIDreferanse eller fakturanummer og leverandï¿½r.</ns0:AssignClause>
+        </ns0:Invoice>
+    </ns0:Batch>
+</ns0:BatchCollection>

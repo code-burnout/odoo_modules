@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_inherit" model="ir.ui.view">
+        <field name="name">account.move.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//form/sheet/group/group[@id='header_left_group']/field[@name='partner_id']" position='after'>
+                <field name="link_prod_id" groups="base.group_user"/>
+            </xpath>
+
+        </field>
+     </record>
+     <record id="vad_res_inherit" model="ir.ui.view">
+        <field name="name">vad.res.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//form/sheet/notebook/page[@name='sales_purchases']/group/group[@name='sale']/field[@name='user_id']" position='after'>
+                <field name="delv_terms"/>
+                <field name="detailed_terms"/>
+                <field name="payment_fact"/>
+                <field name="jurid_info"/>
+
+            </xpath>
+
+        </field>
+     </record>
+    <!--Inherits into sales application under forms views-->
+     <record id="vad_sales_inherit" model="ir.ui.view">
+        <field name="name">vad.sale.order.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position='after'>  
+                <field name="partner_invoice_id"/>
+                <field name="partner_shipping_id"/>
+            </xpath>
+
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="replace">
+                <field name="name" style="width:600"/>
+            </xpath>
+
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='qty_delivered']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+
+             <xpath expr="//page/field[@name='order_line']/tree/field[@name='qty_invoiced']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+            </xpath>
+
+<!--       exp     add this line-->
+            <xpath expr="//field[@name='date_order']" position='after'>
+                 <field name="total_dis"/>
+                 <field name="total_dis_line"/>
+            </xpath>
+<!--       exp     add this line-->
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                   <attribute name="optional">hide</attribute>
+                   <attribute name="class">lest_change</attribute>
+            </xpath>
+
+             <xpath expr="//page/field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                    <field name="id"/>
+                    <field name="line_marking"/>
+                    <field name="prod_ist"/>
+            </xpath>
+
+            <xpath expr="//page/group/group[@name='sales_person']/field[@name='client_order_ref']" position="after">
+                <field name="client_order_ref2"/>
+                <field name="delive_date"  invisible="1"/>
+                <field name="orde_date"  invisible="1"/>
+            </xpath>
+
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='discount']" position="before">
+                    <field name="delivered"/>
+                    <field name="invoiced"/>
+                    <field name="disAmount" optional="hide"/>
+
+            </xpath>
+
+
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                 <attribute name="optional">hide</attribute>
+            </xpath>
+
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='prod_ist']" position="attributes">
+                 <attribute name="optional">hide</attribute>
+            </xpath>
+
+
+            <xpath expr="//page/group/group[@name='sales_person']/field[@name='tag_ids']" position="attributes">
+                <attribute name="string">Marking</attribute>
+            </xpath>
+
+             <xpath expr="//page/group/group[@name='sales_person']/field[@name='require_signature']" position="attributes">
+               <attribute name="invisible">1</attribute>
+            </xpath>
+
+             <xpath expr="//page/group/group[@name='sales_person']/field[@name='require_payment']" position="attributes">
+               <attribute name="invisible">1</attribute>
+            </xpath>
+
+
+
+        </field>
+    </record>
+
+    <!-- inherits into sales appplication under tree views
+    <record id="vad_into_sales_tree" model="ir.ui.view">
+        <field name="name">vad.tree.order.inherited</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position='after'>
+                <field name="line_marking"/>   
+            </xpath>
+        </field>
+    </record>
+    <!inherits our applicatio into sales tab-->
+</odoo>
+

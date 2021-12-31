@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="edited_account_invoices" model="ir.actions.report">
+            <field name="name">Edited Invoices</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hos_production_app.edit_report_invoice_with_payments</field>
+            <field name="report_file">hos_production_app.edit_report_invoice_with_payments</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+        </record>
+
+        <record id="edited_account_invoices" model="ir.actions.report">
+            <field name="name">Faktura</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hos_production_app.edit_report_invoice_with_payments</field>
+            <field name="report_file">hos_production_app.edit_report_invoice_with_payments</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+        </record>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,12 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_laptopsys_model,access_laptopsys_model,model_laptopsys_model,,1,1,1,1
+access_curownership_model,access_curownership_model,model_curownership_model,,1,1,1,1
+access_logowner_model,access_logowner_model,model_logowner_model,,1,1,1,1
+access_mantainance_model,access_mantainance_model,model_mantainance_model,,1,1,1,1
+
+
+
+
+
+
+
