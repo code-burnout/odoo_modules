@@ -41,7 +41,7 @@
         action="terminated_comp_views"
         sequence="20"/>
 
-     <record id="bakertilly_ter_comp_views" model="ir.actions.act_window">
+<record id="bakertilly_ter_comp_views" model="ir.actions.act_window">
     <field name="name">BakerTilly Terminated Computers</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">laptopsys.model</field>
@@ -55,7 +55,7 @@
     </field>
 </record>
 
-<menuitem id="bakertily_ter-menu"
+<menuitem id="bakertily_ter_menu"
 		name="BakerTilly Terminated Computers"
 		parent="terminated_comp_menu"
 		action="bakertilly_ter_comp_views"
@@ -75,13 +75,14 @@
     </field>
 </record>
 
-<menuitem id="qrent_ter-menu"
+<menuitem id="qrent_ter_menu"
 		name="QRent Terminated Computers"
 		parent="terminated_comp_menu"
 		action="qrent_ter_comp_views"
 		sequence="20"/>
 
- <record id="bakertilly_gd_comp_views" model="ir.actions.act_window">
+
+<record id="bakertilly_gd_comp_views" model="ir.actions.act_window">
     <field name="name">BakerTilly Computers In Good Condition </field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">laptopsys.model</field>
@@ -102,7 +103,7 @@
 		sequence="10"/>
 
 
- <record id="bakertilly_bd_comp_views" model="ir.actions.act_window">
+<record id="bakertilly_bd_comp_views" model="ir.actions.act_window">
     <field name="name">BakerTilly Computers Under Service</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">laptopsys.model</field>
@@ -122,8 +123,27 @@
 		action="bakertilly_bd_comp_views"
 		sequence="20"/>
 
+<record id="qrent_comp_views" model="ir.actions.act_window">
+    <field name="name">QRent Computers</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">laptopsys.model</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="context">{'default_state':'new'}</field>
+    <field name="domain">[('ownership','=','rental')]</field>
+    <field name="help" type="html">
+    	<p class="o_view_nocontent_smiling_face">
+    	Record a New Rental Computer!
+    	</p>
+    </field>
+</record>
 
- <record id="rental_gd_comp_views" model="ir.actions.act_window">
+<menuitem id="qrent_comp_menu"
+        name="QRent Computers"
+        parent="laptopsys_root"
+        action="qrent_comp_views"
+        sequence="10"/>
+
+<record id="rental_gd_comp_views" model="ir.actions.act_window">
     <field name="name">QRent Computers In Good Condition </field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">laptopsys.model</field>
@@ -144,7 +164,8 @@
 		sequence="10"/>
 
 
- <record id="qrent_bd_comp_views" model="ir.actions.act_window">
+
+<record id="qrent_bd_comp_views" model="ir.actions.act_window">
     <field name="name">QRent Computers Under Service</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">laptopsys.model</field>
@@ -162,25 +183,6 @@
 		name="Under Service Computers"
 		parent="qrent_comp_menu"
 		action="qrent_bd_comp_views"
-		sequence="20"/>
+		sequence="10"/>
 
-    <record id="qrent_comp_views" model="ir.actions.act_window">
-    <field name="name">QRent Computers</field>
-    <field name="type">ir.actions.act_window</field>
-    <field name="res_model">laptopsys.model</field>
-    <field name="view_mode">tree,form,kanban</field>
-    <field name="context">{'default_state':'new'}</field>
-    <field name="domain">[('ownership','=','rental')]</field>
-    <field name="help" type="html">
-    	<p class="o_view_nocontent_smiling_face">
-    	Record a New Rental Computer!
-    	</p>
-    </field>
-</record>
-
-<menuitem id="qrent_comp_menu"
-        name="QRent Computers"
-        parent="laptopsys_root"
-        action="qrent_comp_views"
-        sequence="10"/>
 </odoo>
