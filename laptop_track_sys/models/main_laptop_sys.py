@@ -14,6 +14,7 @@ class laptop_sys(models.Model):
 
 
 	modelName = fields.Char(required=True ,string="Brand Name" ,default="eg: Dell yyy")
+	reference=fields.Char(string="Reference",readonly=True,required=True,copy=False, default=lambda self: _('New'))
 	serialNum = fields.Char(required=True ,string="Serial Number" ,default="")
 	laptopImage = fields.Binary(string="laptop Photo")
 	processor = fields.Text(required=True ,string="Processor" ,default="")
@@ -23,6 +24,13 @@ class laptop_sys(models.Model):
 	totalMaintaince = fields.Float(string="Total Maintaince Cost $",compute="_cal_totalcosts")
 	priceBought = fields.Float(string="Price Bought $")
 	repairs_count = fields.Integer(compute="_repairs_count", string="Appointment Times")
+
+	@api.model
+	def create(self, vals):
+		if vals.get('reference', _('New')) == _('New'):
+			vals['reference'] = self.env['ir.sequence'].next_by_code('next_laptop.seq') or _('New')
+		res = super(laptop_sys, self).create(vals)
+		return res
 
 	# usinf f=or looops saves from singleton
 	def _repairs_count(self):
