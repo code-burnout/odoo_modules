@@ -63,11 +63,11 @@
             			<group>
 			                <field name="currentOnwer"/>
                             <field name="ownership"/>
-			                <field name="processor"/>
-			                <field name="ramSize"/>
-                            <field name="osInstalled"/>
             			</group>
             			<group>
+                            <field name="processor"/>
+			                <field name="ramSize"/>
+                            <field name="osInstalled"/>
                             <field name="state"/>
                            <field name="priceBought"/>
 
