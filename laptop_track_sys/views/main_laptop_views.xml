@@ -55,12 +55,13 @@
                      <field name="laptopImage" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="modelName"/>
+                            <field name="reference"/>
                         </h1>
                     </div>
             		<group>
             			<!--this splts form into 2 -->
             			<group>
+                             <field name="modelName"/>
 			                <field name="currentOnwer"/>
                             <field name="ownership"/>
             			</group>
