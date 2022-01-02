@@ -11,7 +11,8 @@
     'depends' : ['mail'],
     'data': [
     #security -- data -- views --reports
-    'security/ir.model.access.csv',
+        'data/data.xml',
+        'security/ir.model.access.csv',
     'views/main_laptop_views.xml',
     'views/owner_views.xml',
     'views/ownership_details_views.xml',
